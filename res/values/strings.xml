@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Task</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Task">My App</string>
+    <string name="title_activity_sepetim">Sepetim</string>
+    <string name="title_activity_ara">Ara</string>
+
+    <string name="Sepetim">Sepetime Git</string>
+	<string name="An_itibari_Ucret">Toplam Bedel</string>
+	<string name="Alis_Verisi_Bitir">Alış Verişi Bitir</string>
+
+	
+	<array name="contents">
+    <item>Sepetime Git</item>
+    <item>Toplam Bedel</item>
+    <item>Alış Verişi Bitir</item>
+    
+	</array>
+    
+</resources>
