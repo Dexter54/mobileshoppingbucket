@@ -24,11 +24,14 @@ public class MainActivity extends Activity {
 
 	String EXTRA_MESSAGE = " ";
 	//Burasý private olacak
-	public ArrayList<Urun> kisiler=new ArrayList<Urun>();
+	public static  ArrayList<Urun> kisiler=new ArrayList<Urun>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		
 		
 		try {
             Button scanner = (Button)findViewById(R.id.imageButtonSelector);
@@ -39,11 +42,12 @@ public class MainActivity extends Activity {
                         
                 public void onClick(View v) {
                 	
+                	kisiler.clear();
                 	EditText xyz = (EditText) findViewById(R.id.editText1);
                     String tc=xyz.getText().toString();
                 	Intent intent = new Intent(); 
                 	intent.setClass(MainActivity.this, Ara.class); 
-                	intent.putExtra("MyList", kisiler ); 
+                	//intent.putExtra("MyList", kisiler ); 
                 	intent.putExtra("tc", tc ); 
                 	
                 	startActivity(intent);

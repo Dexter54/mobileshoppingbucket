@@ -48,7 +48,7 @@ public class Ara extends MainActivity {
 	private DrawerLayout mDrawerLayout;  
     private ListView mDrawerList;
     Button scanner;
-    public ArrayList<Urun> kisiler;
+    //public ArrayList<Urun> kisiler;
     Urun x;
     private ProgressDialog pDialog;
     String Uruncode;
@@ -64,7 +64,7 @@ public class Ara extends MainActivity {
 		setContentView(R.layout.drawer_layout);
 		
 		Intent i = getIntent();
-		kisiler= (ArrayList<Urun>) i.getSerializableExtra("MyList");
+		//kisiler= (ArrayList<Urun>) i.getSerializableExtra("MyList");
 		tc=i.getStringExtra("tc");
 		
 		
@@ -119,7 +119,7 @@ public class Ara extends MainActivity {
 	
 	private class DrawerItemClickListener implements ListView.OnItemClickListener  {
 	    
-		public ArrayList<Urun> kisiler1=new ArrayList<Urun>();
+		
 		
 		@Override
 	    public void onItemClick(AdapterView parent, View view, int position, long id) {
@@ -139,7 +139,7 @@ public class Ara extends MainActivity {
 			        	    
 			        	  	Intent intent = new Intent(); 
 		                	intent.setClass(Ara.this, Sepetim.class); 
-		                	intent.putExtra("MyList",kisiler );
+		                	//intent.putExtra("MyList",kisiler );
 		                	startActivity(intent);
 		              break; 	
 			          case 1:
@@ -193,7 +193,7 @@ public class Ara extends MainActivity {
                         List<NameValuePair> params1 = new ArrayList<NameValuePair>();
                         params1.add(new BasicNameValuePair("Uruncode", Uruncode));
                         HttpClient httpclient = new DefaultHttpClient();
-                        HttpPost httppost = new HttpPost("http://192.168.2.3/first/getproduct.php");
+                        HttpPost httppost = new HttpPost("http://192.168.43.149/first/getproduct.php");
                         httppost.setEntity(new UrlEncodedFormEntity(params1));
                         HttpResponse response = httpclient.execute(httppost); 
                         HttpEntity entity = response.getEntity();
@@ -275,6 +275,7 @@ public class Ara extends MainActivity {
          * **/
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once got all details
+        	//pDialog.cancel();
             //pDialog.dismiss();
         }
     }
@@ -317,7 +318,7 @@ public class Ara extends MainActivity {
                         params1.add(new BasicNameValuePair("Total",abc));
                         params1.add(new BasicNameValuePair("Tamam","0"));
                         HttpClient httpclient = new DefaultHttpClient();
-                        HttpPost httppost = new HttpPost("http://192.168.2.3/first/create_product.php");
+                        HttpPost httppost = new HttpPost("http://192.168.43.149/first/create_product.php");
                         httppost.setEntity(new UrlEncodedFormEntity(params1));
                         HttpResponse response = httpclient.execute(httppost); 
                         HttpEntity entity = response.getEntity();
@@ -327,7 +328,7 @@ public class Ara extends MainActivity {
                         
                         params1.add(new BasicNameValuePair("kimlikno", tc));
                         httpclient = new DefaultHttpClient();
-                        httppost = new HttpPost("http://192.168.2.3/first/getidcustomer.php");
+                        httppost = new HttpPost("http://192.168.43.149/first/getidcustomer.php");
                         httppost.setEntity(new UrlEncodedFormEntity(params1));
                         response = httpclient.execute(httppost); 
                         entity = response.getEntity();
@@ -392,7 +393,7 @@ public class Ara extends MainActivity {
                     
                     for(int i=0;i<kisiler.size();++i){
                     	HttpClient httpclient = new DefaultHttpClient();
-                        HttpPost httppost = new HttpPost("http://192.168.2.3/first/saveall.php");
+                        HttpPost httppost = new HttpPost("http://192.168.43.149/first/saveall.php");
                     	List<NameValuePair> params1 = new ArrayList<NameValuePair>();
                     	String x = Integer.toString(temp);
                     	params1.add(new BasicNameValuePair("idcustomer", x));
@@ -484,7 +485,7 @@ public class Ara extends MainActivity {
          * **/
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once got all details
-            //pDialog.dismiss();
+        	//pDialog.cancel();
         }
     }
 

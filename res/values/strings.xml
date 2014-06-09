@@ -6,7 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="Task">My App</string>
     <string name="title_activity_sepetim">Sepetim</string>
-    <string name="title_activity_ara">Ara</string>
+    <string name="title_activity_ara">Urun_ekle</string>
 
     <string name="Sepetim">Sepetime Git</string>
 	<string name="An_itibari_Ucret">Toplam Bedel</string>

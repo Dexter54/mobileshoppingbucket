@@ -25,7 +25,7 @@ public class Sepetim extends Ara {
 
 	
 	private String[] isimler=new String[3];
-	ArrayList<Urun>  kisiler;//=new ArrayList<Urun>();
+	//ArrayList<Urun>  kisiler;//=new ArrayList<Urun>();
 	MyAdapter adaptorumuz;
 	
 	@Override
@@ -35,7 +35,7 @@ public class Sepetim extends Ara {
 	
 			 Intent i = getIntent(); 
 
-			 kisiler= (ArrayList<Urun>) i.getSerializableExtra("MyList");
+			 //kisiler= (ArrayList<Urun>) i.getSerializableExtra("MyList");
 			   //Log.d("",kisiler.get(0).geturuncode());
 			 
 			   int xyz=kisiler.size();
@@ -74,9 +74,9 @@ public class Sepetim extends Ara {
         AlertDialog.Builder alert = new AlertDialog.Builder(
                 Sepetim.this);
     
-        alert.setTitle("Delete");
-        alert.setMessage("Do you want delete this item?");
-        alert.setPositiveButton("YES", new OnClickListener() {
+        alert.setTitle("Silme");
+        alert.setMessage("Bu ürünü silmek istediðinize emin misiniz?");
+        alert.setPositiveButton("EVET", new OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -97,7 +97,7 @@ public class Sepetim extends Ara {
 				
 			}
         });
-        alert.setNegativeButton("CANCEL", new OnClickListener() {
+        alert.setNegativeButton("HAYIR", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // TODO Auto-generated method stub
